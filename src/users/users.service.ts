@@ -16,6 +16,9 @@ export class UsersService {
       where: { email },
     });
   }
+  findById(id:number){
+    return this.userRepository.findOne({where:{id},});
+  }
 
   create(userData: Partial<User>) {
     const user = this.userRepository.create(userData);

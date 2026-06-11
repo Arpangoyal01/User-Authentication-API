@@ -74,4 +74,14 @@ export class AuthService {
             access_token: accessToken,
         };
     }
+
+    async getProfile(userId: number){
+        const user = await this.usersService.findById(userId);
+
+        if(!user){
+            return null;
+        }
+        const {password, ...profile} = user;
+        return profile;
+    }
 }
