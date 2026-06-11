@@ -19,7 +19,7 @@ export class UsersService {
       name: true,
       email: true,
       password: true,
-      createdAt: true,
+      createdAt: true,}
     });
   }
   findById(id:number){
